@@ -16,6 +16,9 @@ after_success:
     - docker push $DOCKER_ID/flask-backend:latest
 
 deploy:
+    edge:
+        source: 'native-api/dpl'
+        branch: 'ebs_session_token'
     provider: elasticbeanstalk
     region: us-east-1
     app: string-reverser
