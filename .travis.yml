@@ -1,0 +1,19 @@
+sudo: required
+
+services: docker
+
+before_install:
+    - echo "Building backend image..."
+    - docker build -t prayingemantis/flask-backend:latest .
+
+script:
+    - echo "Running tests..."
+    - docker run prayingemantis/flask-backend:latest python app_test.py
+
+after_success:
+    - echo "Pushing image to DockerHub..."
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+    - docker push prayingemantis/flask-backend:latest
+
+# TODO: Deploy to AWS EB
+# deploy:
