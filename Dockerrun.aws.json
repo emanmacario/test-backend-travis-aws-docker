@@ -11,10 +11,10 @@
             "portMappings": [
                 {
                     "containerPort": 3000,
-                    "hostPort": 80
+                    "hostPort": 8081
                 }
             ],
-            "memory": 512
+            "memory": 256
         },
         {
             "name": "backend",
