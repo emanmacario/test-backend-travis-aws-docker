@@ -4,16 +4,16 @@ services: docker
 
 before_install:
     - echo "Building backend image..."
-    - docker build -t "$DOCKER_ID/flask-backend:latest" .
+    - docker build -t $DOCKER_ID/flask-backend:latest .
 
 script:
     - echo "Running tests..."
-    - docker run "$DOCKER_ID/flask-backend:latest" python app_test.py
+    - docker run $DOCKER_ID/flask-backend:latest python app_test.py
 
 after_success:
     - echo "Pushing image to Docker Hub..."
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-    - docker push "$DOCKER_ID/flask-backend:latest"
+    - docker push $DOCKER_ID/flask-backend:latest
 
 # TODO: Deploy to AWS EB
 # deploy:
