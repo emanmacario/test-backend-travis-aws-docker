@@ -1,0 +1,1 @@
+[![Build Status](https://travis-ci.com/emanmacario/test-frontend-travis-aws-docker.svg?branch=master)](https://travis-ci.com/emanmacario/test-frontend-travis-aws-docker)
