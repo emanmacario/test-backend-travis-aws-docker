@@ -14,7 +14,7 @@
                     "hostPort": 8081
                 }
             ],
-            "memory": 256
+            "memory": 1024
         },
         {
             "name": "backend",
